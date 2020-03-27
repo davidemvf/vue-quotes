@@ -3,6 +3,9 @@
     <progressive-bar :quotes='quotes'></progressive-bar>
     <create-quote @quoteCreated='quotes = $event'></create-quote>
     <quote-list :quotes='quotes'></quote-list>
+    <div class="footer">
+      <p><strong>Info: click on a Quote to delete it</strong></p>
+    </div>
   </div>
 </template>
 
@@ -39,4 +42,17 @@ export default {
   height: 700px;
   margin: 0 auto;
 }
+
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(216,237,247);
+}
+
+.footer p{
+  padding: 15px 0;
+  color: rgb(56,53,66);
+  font-family: Arial;
+}
+
 </style>

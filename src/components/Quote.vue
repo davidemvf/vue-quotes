@@ -3,6 +3,7 @@
     <div class="create-quote">
       <p><strong>Quote</strong></p>
       <textarea
+        placeholder="Inserisci una citazione..."
         name="name"
         rows="8"
         cols="80"
@@ -11,7 +12,7 @@
       <button
         type="button"
         name="button"
-        @click= 'pushQuote()'>
+        @click.enter= 'pushQuote()'>
         <strong>Add Quote</strong></button>
     </div>
   </div>
