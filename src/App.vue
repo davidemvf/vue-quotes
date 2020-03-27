@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <progressive-bar :quotes='quotes'></progressive-bar>
+    <create-quote @quoteCreated='quotes = $event'></create-quote>
+    <quote-list :quotes='quotes'></quote-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProgressiveBar from './components/ProgressiveBar.vue'
+import Quote from './components/Quote.vue'
+import QuoteList from './components/QuoteList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'progressive-bar': ProgressiveBar,
+    'create-quote': Quote,
+    'quote-list': QuoteList
+  },
+  data: function() {
+    return {
+      quotes: []
+    }
   }
 }
 </script>
 
 <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 90%;
+  height: 700px;
+  margin: 0 auto;
 }
 </style>
