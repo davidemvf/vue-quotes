@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="quote-list">
     <div id="quote-items">
-      <quote-item v-for='quote in quotes'
-                  :key='quote'
+      <quote-item v-for='(quote,index) in quotes'
+                  :key='index'
                   :quote='quote'
                   :quotes='quotes'></quote-item>
     </div>
